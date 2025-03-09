@@ -23,7 +23,8 @@ Developed by: Trisha Priyadarshni Parida
 RegisterNumber: 212224230293
 */
 
-```import numpy as np
+```
+import numpy as np
 import matplotlib.pyplot as plt
 
 #input values of independent variable X & dependent variable Y
