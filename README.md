@@ -17,16 +17,63 @@ To implement univariate Linear Regression to fit a straight line using least squ
 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
 ## Program:
-```
 /*
 Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: 
-RegisterNumber:  
+Developed by: TRISHA PRIYADARSHNI PARIDA
+RegisterNumber:  212224230293
 */
+
+```import numpy as np
+import matplotlib.pyplot as plt
+
+#input values of independent variable X & dependent variable Y
+
+X = np.array([10,20,30,40,50])
+Y = np.array([15,23,38,46,59])
+
+#means, x bar and y bar
+
+X_Mean = np.mean(X)
+Y_Mean = np.mean(Y)
+
+#y = mx+c, m = num/den, num = summation of (x-Mean_X)*(y-Mean_Y), den = summation of (x-mean_X)^2, c = y - mx, y = Y_Mean & x = X_Mean
+
+#Slope m
+
+num = np.sum((X-X_Mean)*(Y-Y_Mean))
+den = np.sum((X-X_Mean)**2)
+m = num/den
+
+#y-intercept c
+
+c = Y_Mean -(m*X_Mean)
+
+#Equation of the line format => 'y' = m'x'+c, Display eqn of linear regression
+
+print(f"Equation of the line: Y = {m:.2f}X + {c:.2f}")  #  {co-efficients of x, i.e, m & constant c}
+
+#plotting the graph with linear regression line/best fit line in red and data points/values in blue
+
+plt.scatter(X,Y,color = "red", label = "Data Points")   #Scatter Plot
+
+#Create list of dependent variable Y's_Expected values acc to eqn of line,
+
+Y_Predicted = (m*X) + c
+
+plt.plot(X,Y_Predicted,color = "blue", label = "Best Fit Line")      #Line Plot Default 
+
+plt.title("UNIVARIATE LINEAR REGRESSION")
+plt.xlabel("INDEPENDENT VARIABLE")
+plt.ylabel("DEPENDENT VARIABLE")
+plt.legend()
+plt.show()
 ```
 
+
 ## Output:
-![best fit line](sam.png)
+![Screenshot 2025-03-09 201341](https://github.com/user-attachments/assets/5e6fa0b4-8db8-4170-9596-10a2117f7f74)
+
+![Screenshot 2025-03-09 201347](https://github.com/user-attachments/assets/00714158-46a5-4cb4-afeb-f857824bb30a)
 
 
 ## Result:
